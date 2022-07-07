@@ -25,5 +25,8 @@ public class VideoGameController {
     @GetMapping("/all")
     public List<VideoGame> GetAll(){return  service.GetAllGames();}
 
-
+    @GetMapping("/getById/{id}")
+    public VideoGame GetById(@PathVariable Integer id){
+        return service.GetGameById(id);
+    }
 }
