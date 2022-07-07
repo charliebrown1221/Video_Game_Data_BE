@@ -1,7 +1,6 @@
 package com.dcc.videoGameApi.controllers;
 
 import com.dcc.videoGameApi.models.VideoGame;
-import com.dcc.videoGameApi.repository.VideoGameRepository;
 import com.dcc.videoGameApi.service.VideoGameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -22,5 +21,9 @@ public class VideoGameController {
     public long GetCount(){
         return service.GetCountOfGames();
     }
+
+    @GetMapping("/all")
+    public List<VideoGame> GetAll(){return  service.GetAllGames();}
+
 
 }
